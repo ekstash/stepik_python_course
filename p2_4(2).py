@@ -10,7 +10,7 @@ for dir in os.walk(os.getcwd()):
 
 list.sort()
 
-os.chdir('C:\\Users\\Lenovo\\PycharmProjects\\learnStepic_py2')
-with open('output.txt', 'w') as file:
+os.chdir('/')
+with open('venv/output.txt', 'w') as file:
     for i in list:
         file.write(i+'\n')
