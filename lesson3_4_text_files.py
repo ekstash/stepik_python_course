@@ -43,3 +43,35 @@ def write_csv():
 # json - что-то типа словаря. Но в качестве ключа могут выступать только строки,
 # булевы значения всегда пишутся с маленькой буквы
 
+def json_file():
+    hum_1 = {
+        "name": "Kate",
+        "age": 25,
+        "list": [1, 2],
+        "girl": True
+    }
+    hum_2 = {
+        "name": "Vlad",
+        "age": 24,
+        "list": [3, 4],
+        "girl": False
+    }
+
+    humans = [hum_1, hum_2]
+
+    # indent - отступ элементов в файле, сортировка по ключам
+    new_hum = json.dumps(humans, indent=4, sort_keys=True)
+
+    # можно записать в файл:
+    with open('output.json', 'w') as f:
+        json.dump(humans, f, indent=4, sort_keys=True)
+
+    # снова будет словарь
+    double_humans = json.loads(new_hum)
+
+    # или же из файла
+    with open('output.json') as f:
+        double_humans = json.load(f)
+
+
+json_file()
