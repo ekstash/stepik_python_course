@@ -6,12 +6,14 @@ def count(x):
     if x in num:
         return num[x]
     for c in childs[x]:
+        if c in bool_list:
+            continue
+        bool_list.append(c)
         sum += 1
         if c in num:
             sum += num[c]
         else:
             sum += count(c)
-    num[x] = sum
     return sum
 
 
@@ -33,8 +35,8 @@ for el in dic:
 num = dict()
 
 for c in childs:
-    if c not in num:
-        num[c] = count(c)
+    bool_list=[]
+    num[c] = count(c)
 
 list_keys = list(childs.keys())
 list_keys.sort()
