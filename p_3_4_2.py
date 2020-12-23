@@ -30,7 +30,7 @@ for el in dic:
 num = dict()
 
 for c in childs:
-    bool_list=[]
+    bool_list = []
     num[c] = count(c)
 
 list_keys = list(childs.keys())
