@@ -3,17 +3,12 @@ import json
 
 def count(x):
     sum = 0
-    if x in num:
-        return num[x]
     for c in childs[x]:
         if c in bool_list:
             continue
         bool_list.append(c)
         sum += 1
-        if c in num:
-            sum += num[c]
-        else:
-            sum += count(c)
+        sum += count(c)
     return sum
 
 
