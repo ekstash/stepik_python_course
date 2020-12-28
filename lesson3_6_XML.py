@@ -62,4 +62,4 @@ def lxml_format():
     for el in root.iter('a'):
         print(el, el.attrib)
 
-lxml_format()
+read_xml()
