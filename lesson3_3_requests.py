@@ -2,7 +2,7 @@ import requests
 
 res = requests.get('https://docs.python.org/3.9/_static/py.png')
 print(res.status_code)  # статус ответа res
-print(res.headers['Content-Type'])  # тип res
+print(res.headers['Content-Type'])  # тип содержимого res
 
 html = res.content  # бинарное содержимое
 # print(res.text)  # если содержимое - текстовый файл
